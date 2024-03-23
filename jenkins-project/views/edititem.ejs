@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Edit <%- todo.text %></title>
-    <style>
-        a {
-            text-decoration: none;
-            color: black;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Item</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Edit <%- todo.text %>:</h1>
-    <form action="/todo/edit/<%= todoIdx %>" method="post">
-        <p>
-            <label for="editTodo">Change to:</label>
-            <input type="hidden" name="_method" value="PUT">
-            <input type="text" name="editTodo" id="editTodo" autofocus placeholder="<%- todo.text %>" />
-            <input type="submit" value="Save" />
-        </p>
+    <h1>Edit Item</h1>
+    <form action="/edit/<%= id %>" method="post">
+        <input type="text" name="todo" value="<%= todo %>">
+        <button type="submit">Update</button>
     </form>
 </body>
 </html>
-
